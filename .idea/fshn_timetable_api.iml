@@ -71,6 +71,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.0, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="roo (v2.8.3, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v3.1.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.0.2, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
