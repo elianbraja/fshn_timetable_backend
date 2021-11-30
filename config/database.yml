@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: fshn_timetable_development
+  username: postgres
+  password: root
