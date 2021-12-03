@@ -6,7 +6,17 @@ class TimetableController < ApplicationController
 
   def pedagog
     url = "http://37.139.119.36:81/orari/shkarkoPedagog/#{params[:email]}"
-    excel_parser(url, :pedagog)
+    excel_parser(url, :professor)
+  end
+
+  def subjects
+    scraper = Services::Scraper.new
+    render json: {subjects: scraper.subject_list_parser}
+  end
+
+  def professors
+    scraper = Services::Scraper.new
+    render json: {professors: scraper.professor_list_parser}
   end
 
   private
@@ -37,12 +47,12 @@ class TimetableController < ApplicationController
     }
   end
 
-  def event_parser_pedagog(event_string)
+  def event_parser_professor(event_string)
     split_event_array = event_string.split("|")
     {
       subject: split_event_array[1].strip,
       type: split_event_array[2].strip[0],
-      teacher: split_event_array[0].strip,
+      teacher: (split_event_array[3].strip + " / " + split_event_array[4].strip),
       location: split_event_array[5].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), '')
     }
   end
