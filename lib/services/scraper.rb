@@ -8,8 +8,8 @@ module Services
       html = open(url)
       @doc = Nokogiri::HTML(html, nil, 'UTF-8')
       subject_array = []
-      @doc.css('#ddlDega option').each do |dega|
-        subject_array.push(dega[:value])
+      @doc.css('#ddlDega option').each_with_index do |dega, index|
+        subject_array.push({id: index.to_s, name: dega[:value]})
       end
       subject_array.shift
       subject_array
