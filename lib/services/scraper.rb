@@ -9,7 +9,10 @@ module Services
       @doc = Nokogiri::HTML(html, nil, 'UTF-8')
       subject_array = []
       @doc.css('#ddlDega option').each_with_index do |dega, index|
-        subject_array.push({id: index.to_s, name: dega[:value]})
+        subject_array.push({
+                             label: dega[:value],
+                             value: dega[:value]
+                           })
       end
       subject_array.shift
       subject_array
@@ -22,8 +25,8 @@ module Services
       professor_array = []
       @doc.css('.dropDownList option').each do |professor|
         professor_array.push({
-                               name: professor.text,
-                               email: professor[:value]
+                               label: professor.text,
+                               value: professor[:value]
                              })
       end
       professor_array.shift(2)

@@ -43,6 +43,7 @@
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.28, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.3, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.9, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.10.0, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
@@ -60,6 +61,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.8, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.12.5, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v1.2.3, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pry (v0.14.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.5.2, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.0, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.3, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
@@ -72,7 +74,10 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.0, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="roo (v2.8.3, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="roo-xls (v1.2.0, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-ole (v1.2.12.2, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="spreadsheet (v1.3.0, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spring (v3.1.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.0.2, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.1, RVM: ruby-2.6.6 [fsh_timetable]) [gem]" level="application" />
