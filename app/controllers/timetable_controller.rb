@@ -11,12 +11,16 @@ class TimetableController < ApplicationController
 
   def subjects
     scraper = Services::Scraper.new
-    render json: {subjects: scraper.subject_list_parser}
+    render json: { subjects: scraper.subject_list_parser }
   end
 
   def professors
     scraper = Services::Scraper.new
-    render json: {professors: scraper.professor_list_parser}
+    render json: { professors: scraper.professor_list_parser }
+  end
+
+  def search_image
+    send_file File.join('app//assets/images/img.jpeg'), :disposition => 'inline'
   end
 
   private

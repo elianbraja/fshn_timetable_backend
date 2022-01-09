@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'timetable/student', :to => 'timetable#student'
   get 'timetable/pedagog', :to => 'timetable#pedagog'
   get 'timetable/subjects', :to => 'timetable#subjects'
-  get 'timetable/professors', :to => 'timetable#professors'
+  get '/search_image' => 'timetable#search_image', :as => :custom_image
 end
