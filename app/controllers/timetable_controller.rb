@@ -20,7 +20,7 @@ class TimetableController < ApplicationController
   end
 
   def search_image
-    send_file File.join('app//assets/images/img.jpeg'), :disposition => 'inline'
+    send_file File.join('app/assets/images/img.jpeg'), :disposition => 'inline'
   end
 
   private
