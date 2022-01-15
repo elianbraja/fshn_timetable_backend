@@ -49,7 +49,7 @@ class TimetableController < ApplicationController
       type: split_event_array[1].strip[0],
       teacher: split_event_array[2].strip,
       location: split_event_array[3].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), ''),
-      status: day_index == 1 ? calculate_status_of(time) : nil
+      status: day_index == Date.today.wday ? calculate_status_of(time) : nil
     }
   end
 
