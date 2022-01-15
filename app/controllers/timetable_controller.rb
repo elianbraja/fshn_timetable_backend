@@ -66,7 +66,7 @@ class TimetableController < ApplicationController
     end
   end
 
-  def event_parser_professor(event_string)
+  def event_parser_professor(event_string, _, _)
     split_event_array = event_string.split("|")
     {
       subject: split_event_array[1].strip,
