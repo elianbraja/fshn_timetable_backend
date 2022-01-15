@@ -26,6 +26,7 @@ class TimetableController < ApplicationController
   private
 
   def excel_parser(url, status)
+    # sheet = Roo::Spreadsheet.open("public/orari_mësimor_2016_2017_semI.xls", extension: :xls)
     sheet = Roo::Spreadsheet.open(url, extension: :xls)
     parsed_sheet = sheet.parse
 
@@ -34,21 +35,35 @@ class TimetableController < ApplicationController
     days.each_with_index do |_, day_index|
       day_hash = { day: day_index + 1, timetable: [] }
       parsed_sheet.drop(1).each_with_index do |data|
-        day_hash[:timetable].push({ time: data[0] }.merge(send("event_parser_#{status}", data[day_index + 1]))) unless data[day_index + 1].nil?
+        day_hash[:timetable].push({ time: data[0] }.merge(send("event_parser_#{status}", data[day_index + 1], day_index + 1, data[0]))) unless data[day_index + 1].nil?
       end
       hash.push(day_hash)
     end
     render json: hash
   end
 
-  def event_parser_student(event_string)
+  def event_parser_student(event_string, day_index, time)
     split_event_array = event_string.split("|")
     {
       subject: split_event_array[0].strip,
       type: split_event_array[1].strip[0],
       teacher: split_event_array[2].strip,
-      location: split_event_array[3].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), '')
+      location: split_event_array[3].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), ''),
+      status: day_index == 1 ? calculate_status_of(time) : nil
     }
+  end
+
+  def calculate_status_of(time)
+    times = time.split("-").map(&:strip)
+
+    if (Time.now + 1*60*60).between?(times[0], times[1])
+      "now"
+    elsif Time.now < times[0]
+      "upcoming"
+    else
+      Time.now > times[1]
+      "completed"
+    end
   end
 
   def event_parser_professor(event_string)
