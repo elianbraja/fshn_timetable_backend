@@ -67,7 +67,7 @@ class TimetableController < ApplicationController
   def calculate_status_of(time)
     times = time.split("-").map(&:strip)
 
-    if (parse_time(Time.now) + 1*60*60).between?(times[0], times[1])
+    if parse_time(Time.now).between?(parse_time(times[0]), parse_time(times[1]))
       "now"
     elsif parse_time(Time.now) < parse_time(times[0])
       "upcoming"
