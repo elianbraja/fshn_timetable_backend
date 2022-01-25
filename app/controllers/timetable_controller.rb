@@ -53,6 +53,17 @@ class TimetableController < ApplicationController
     }
   end
 
+  def event_parser_professor(event_string, day_index, time)
+    split_event_array = event_string.split("|")
+    {
+      subject: split_event_array[1].strip,
+      type: split_event_array[2].strip[0],
+      teacher: (split_event_array[3].strip + " / " + split_event_array[4].strip),
+      location: split_event_array[5].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), ''),
+      status: day_index == Date.today.wday ? calculate_status_of(time) : nil
+    }
+  end
+
   def calculate_status_of(time)
     times = time.split("-").map(&:strip)
 
@@ -64,15 +75,5 @@ class TimetableController < ApplicationController
       Time.now > times[1]
       "completed"
     end
-  end
-
-  def event_parser_professor(event_string, _, _)
-    split_event_array = event_string.split("|")
-    {
-      subject: split_event_array[1].strip,
-      type: split_event_array[2].strip[0],
-      teacher: (split_event_array[3].strip + " / " + split_event_array[4].strip),
-      location: split_event_array[5].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), '')
-    }
   end
 end
