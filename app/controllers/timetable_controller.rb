@@ -49,7 +49,7 @@ class TimetableController < ApplicationController
       type: split_event_array[1].strip[0],
       teacher: split_event_array[2].strip,
       location: split_event_array[3].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), ''),
-      status: day_index == Date.today.wday ? calculate_status_of(time) : nil
+      status: day_index == current_time.to_date.wday ? calculate_status_of(time) : nil
     }
   end
 
@@ -60,21 +60,25 @@ class TimetableController < ApplicationController
       type: split_event_array[2].strip[0],
       teacher: (split_event_array[3].strip + " / " + split_event_array[4].strip),
       location: split_event_array[5].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), ''),
-      status: day_index == Date.today.wday ? calculate_status_of(time) : nil
+      status: day_index == current_time.to_date.wday ? calculate_status_of(time) : nil
     }
   end
 
   def calculate_status_of(time)
     times = time.split("-").map(&:strip)
 
-    if (Time.now + 1*60*60).between?(times[0], times[1])
+    if (current_time + 1*60*60).between?(times[0], times[1])
       "now"
-    elsif Time.now < times[0]
+    elsif current_time < times[0]
       "upcoming"
-    elsif Time.now > times[1]
+    elsif current_time > times[1]
       "completed"
     else
       nil
     end
+  end
+
+  def current_time
+    Time.now.in_time_zone('Rome')
   end
 end
