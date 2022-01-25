@@ -71,9 +71,10 @@ class TimetableController < ApplicationController
       "now"
     elsif Time.now < times[0]
       "upcoming"
-    else
-      Time.now > times[1]
+    elsif Time.now > times[1]
       "completed"
+    else
+      nil
     end
   end
 end
