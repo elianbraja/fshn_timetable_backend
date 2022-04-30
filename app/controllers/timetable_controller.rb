@@ -4,7 +4,7 @@ class TimetableController < ApplicationController
     excel_parser(url, :student)
   end
 
-  def pedagog
+  def professor
     url = "http://37.139.119.36:81/orari/shkarkoPedagog/#{params[:email]}"
     excel_parser(url, :professor)
   end
