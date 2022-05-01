@@ -30,6 +30,24 @@ class TimetableController < ApplicationController
     render json: { professors: professors_list }
   end
 
+  def academic_years
+    data = get_student_json_data.detect{|e| e["study_field"] == params[:study_field]}["scraped_data"]
+    academic_years_list = []
+    data.each {|e| academic_years_list.push({label: e["academic_year"], value: e["academic_year"]})}
+
+    render json: { academic_years: academic_years_list }
+  end
+
+  def groups
+    data = get_student_json_data.detect{|e| e["study_field"] == params[:study_field]}["scraped_data"].
+      detect{|e| e["academic_year"] == params[:academic_year]}["groups"]
+
+    groups_list = []
+    data.each {|e| groups_list.push({label: e["group"], value: e["group"]})}
+
+    render json: { groups: groups_list }
+  end
+
   private
 
   def get_student_json_data
