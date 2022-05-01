@@ -3,15 +3,15 @@ require 'open-uri'
 module Services
   class NokogiriScraper
 
-    def subject_list_parser
+    def study_fields_parser
       url = "http://37.139.119.36:81/orari/student"
       html = open(url)
       @doc = Nokogiri::HTML(html, nil, 'UTF-8')
       subject_array = []
-      @doc.css('#ddlDega option').each_with_index do |dega, index|
+      @doc.css('#ddlDega option').each_with_index do |study_field, index|
         subject_array.push({
-                             label: dega[:value],
-                             value: dega[:value]
+                             label: study_field[:value],
+                             value: study_field[:value]
                            })
       end
       subject_array.shift

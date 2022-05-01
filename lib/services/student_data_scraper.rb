@@ -4,7 +4,7 @@ require "capybara"
 module Services
   require 'kimurai'
 
-  class KimuraiScraper < Kimurai::Base
+  class StudentDataScraper < Kimurai::Base
     @name = "web_scrapper_spider"
     @engine = :selenium_chrome
     @start_urls = ["http://37.139.119.36:81/orari/student/"]
@@ -13,11 +13,11 @@ module Services
     }
 
     def parse(response, url:, data: {})
-      subjects = Services::NokogiriScraper.new.subject_list_parser
+      study_fields = Services::NokogiriScraper.new.study_fields_parser
 
-      subjects.each do |subject|
-        scraped_by_subject = get_scraped_data_by_subject(browser, subject[:value])
-        save_to "kimurai_scraped_data.json", scraped_by_subject.as_json, format: :json
+      study_fields.each do |study_field|
+        scraped_by_subject = get_scraped_data_by_subject(browser, study_field[:value])
+        save_to "student_scraped_data.json", scraped_by_subject.as_json, format: :json
       end
 
     end
@@ -27,9 +27,11 @@ module Services
       browser.find(:xpath, "//option[@value='#{subject}']").click; sleep 0.1
       browser.current_response.xpath("//select[@id='ddlViti']//option").drop(1).each do |option|
         year = option.text
+        groups = get_groups(browser, subject, year)
+
         scraped_data.push({
                             year: year,
-                            groups: get_groups(browser, year)
+                            groups: groups
                           })
       end
 
@@ -39,13 +41,21 @@ module Services
       }
     end
 
-    def get_groups(browser, year)
+    def get_groups(browser, subject, year)
       groups = []
+
       browser.find(:xpath, "//select[@id='ddlViti']//option[@value=#{year}]").click; sleep 0.1
       browser.current_response.xpath("//select[@id='ddlParaleli']//option").drop(1).each do |option|
-        groups.push(option.text)
+        group = option.text
+        url = "http://37.139.119.36:81/orari/shkarkoStudent/#{ERB::Util.url_encode(subject)}/#{year}/#{group}"
+        subjects = Services::ExcelParser.parse(url, :student)
+        groups.push({
+                      group: group,
+                      subjects: subjects
+                    })
       end
       groups
     end
+
   end
 end
