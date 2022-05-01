@@ -1,7 +1,7 @@
 require 'open-uri'
 
 module Services
-  class Scraper
+  class NokogiriScraper
 
     def subject_list_parser
       url = "http://37.139.119.36:81/orari/student"

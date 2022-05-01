@@ -1,0 +1,525 @@
+[
+  {
+    "subject": " \"Bachelor\" në \"Inxhinieri Matematike dhe Informatike\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 1
+  },
+  {
+    "subject": "Bachelor në \"Biologji\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 2
+  },
+  {
+    "subject": "Bachelor në \"Bioteknologji\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 3
+  },
+  {
+    "subject": "Bachelor në \"Fizikë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 4
+  },
+  {
+    "subject": "Bachelor në \"Informatikë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2",
+          "B1",
+          "B2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2",
+          "B1",
+          "B2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2",
+          "B1",
+          "B2"
+        ]
+      }
+    ],
+    "position": 5
+  },
+  {
+    "subject": "Bachelor në \"Kimi dhe Teknologji Ushqimore\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 6
+  },
+  {
+    "subject": "Bachelor në \"Kimi Industriale e Mjedisore\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 7
+  },
+  {
+    "subject": "Bachelor në \"Kimi\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 8
+  },
+  {
+    "subject": "Bachelor në \"Matematikë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 9
+  },
+  {
+    "subject": "Bachelor në \"Teknologji Informacioni dhe komunikimi\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "2",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      },
+      {
+        "year": "3",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 10
+  },
+  {
+    "subject": "Master i Shkencave në \"Biologji Mjedisore\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 11
+  },
+  {
+    "subject": "Master i Shkencave në \"Biologji Molekulare\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 12
+  },
+  {
+    "subject": "Master i Shkencave në \"Biologji\", me profil \"Mësues biologjie për arsimin e mesëm dhe të lartë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 13
+  },
+  {
+    "subject": "Master i Shkencave në \"Bioteknologji Molekulare dhe Industriale\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 14
+  },
+  {
+    "subject": "Master i Shkencave në \"Fizikë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 15
+  },
+  {
+    "subject": "Master i Shkencave në \"Fizikë\", me profil \"Mësues Fizike për arsimin e mesëm dhe të lartë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 16
+  },
+  {
+    "subject": "Master i Shkencave në \"Informatikë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 17
+  },
+  {
+    "subject": "Master i Shkencave në \"Informatikë\", me profil \"Mësues Informatike për arsimin e mesëm dhe të lartë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 18
+  },
+  {
+    "subject": "Master i Shkencave në \"Inxhinieri Matematike dhe Informatike\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 19
+  },
+  {
+    "subject": "Master i Shkencave në \"Inxhinieria e Proceseve Kimike\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 20
+  },
+  {
+    "subject": "Master i Shkencave në \"Kimi Industriale dhe Mjedisore\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 21
+  },
+  {
+    "subject": "Master i Shkencave në \"Kimi\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 22
+  },
+  {
+    "subject": "Master i Shkencave në \"Kimi\", me profil \"Mësues Kimie për arsimin e mesëm dhe të lartë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 23
+  },
+  {
+    "subject": "Master i Shkencave në \"Matematikë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 24
+  },
+  {
+    "subject": "Master i Shkencave në \"Matematikë\", me profil \"Mësues Matematike për arsimin e mesëm dhe të lartë\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 25
+  },
+  {
+    "subject": "Master i Shkencave në \"Shkencat dhe Teknologjite Ushqimore\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 26
+  },
+  {
+    "subject": "Master i Shkencave ne \"Teknologji Informacioni\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 27
+  },
+  {
+    "subject": "Master Profesional në \"Bioteknologji Mjedisore\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 28
+  },
+  {
+    "subject": "Master Profesional në \"Informatikë Biznesi\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 29
+  },
+  {
+    "subject": "Master Profesional në \"Inxhinieri Matematike dhe Informatike\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1"
+        ]
+      }
+    ],
+    "position": 30
+  },
+  {
+    "subject": "Master Profesional ne \"Teknologji Informacioni\"",
+    "scraped_data": [
+      {
+        "year": "1",
+        "groups": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "position": 31
+  }
+]

@@ -1,6 +1,6 @@
 class TimetableController < ApplicationController
   def student
-    url = "http://37.139.119.36:81/orari/shkarkoStudent/#{ERB::Util.url_encode(params[:subject])}/#{params[:academic_year]}/#{params[:group]}"
+    url = "http://37.139.119.36:81/orari/shkarkoStudent/#{params[:subject]}/#{params[:academic_year]}/#{params[:group]}"
     excel_parser(url, :student)
   end
 
@@ -10,12 +10,12 @@ class TimetableController < ApplicationController
   end
 
   def subjects
-    scraper = Services::Scraper.new
+    scraper = Services::NokogiriScraper.new
     render json: { subjects: scraper.subject_list_parser }
   end
 
   def professors
-    scraper = Services::Scraper.new
+    scraper = Services::NokogiriScraper.new
     render json: { professors: scraper.professor_list_parser }
   end
 

@@ -29,6 +29,11 @@ gem 'roo-xls'
 #Web Scraping
 gem "nokogiri"
 gem "pry"
+gem 'kimurai', '~> 1.2'
+gem 'chromedriver-helper'
+gem "selenium-webdriver"
+gem "capybara"
+gem "capybara-mechanize"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
