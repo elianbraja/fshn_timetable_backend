@@ -26,28 +26,28 @@ module Services
       scraped_data = []
       browser.find(:xpath, "//option[@value='#{subject}']").click; sleep 0.1
       browser.current_response.xpath("//select[@id='ddlViti']//option").drop(1).each do |option|
-        year = option.text
-        groups = get_groups(browser, subject, year)
+        academic_year = option.text
+        groups = get_groups(browser, subject, academic_year)
 
         scraped_data.push({
-                            year: year,
+                            academic_year: academic_year,
                             groups: groups
                           })
       end
 
       {
-        subject: subject,
+        study_field: subject,
         scraped_data: scraped_data
       }
     end
 
-    def get_groups(browser, subject, year)
+    def get_groups(browser, subject, academic_year)
       groups = []
 
-      browser.find(:xpath, "//select[@id='ddlViti']//option[@value=#{year}]").click; sleep 0.1
+      browser.find(:xpath, "//select[@id='ddlViti']//option[@value=#{academic_year}]").click; sleep 0.1
       browser.current_response.xpath("//select[@id='ddlParaleli']//option").drop(1).each do |option|
         group = option.text
-        url = "http://37.139.119.36:81/orari/shkarkoStudent/#{ERB::Util.url_encode(subject)}/#{year}/#{group}"
+        url = "http://37.139.119.36:81/orari/shkarkoStudent/#{ERB::Util.url_encode(subject)}/#{academic_year}/#{group}"
         subjects = Services::ExcelParser.parse(url, :student)
         groups.push({
                       group: group,

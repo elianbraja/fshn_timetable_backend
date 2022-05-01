@@ -1,27 +1,46 @@
 class TimetableController < ApplicationController
+
   def student
-    url = "http://37.139.119.36:81/orari/shkarkoStudent/#{ERB::Util.url_encode(params[:study_field])}/#{params[:academic_year]}/#{params[:group]}"
-    parsed_result = Services::ExcelParser.parse(url, :student)
-    render json: parsed_result
+    data = get_student_json_data
+    subjects = data.detect{|e| e["study_field"] == params[:study_field]}["scraped_data"].
+      detect{|e| e["academic_year"] == params[:academic_year]}["groups"].
+      detect{|e| e["group"] == params[:group]}["subjects"]
+
+    render json: subjects
   end
 
   def professor
-    url = "http://37.139.119.36:81/orari/shkarkoPedagog/#{params[:email]}"
-    parsed_result = Services::ExcelParser.parse(url, :professor)
-    render json: parsed_result
+    data = get_professor_json_data
+    render json: data.detect{|e| e["professor_email"] == params[:email]}["timetable"]
   end
 
   def study_fields
-    scraper = Services::NokogiriScraper.new
-    render json: { study_fields: scraper.study_fields_parser }
+    data = get_student_json_data
+    study_fields = []
+    data.each {|e| study_fields.push({label: e["study_field"], value: e["study_field"]})}
+
+    render json: { study_fields: study_fields }
   end
 
   def professors
-    scraper = Services::NokogiriScraper.new
-    render json: { professors: scraper.professor_list_parser }
+    data = get_professor_json_data
+    professors_list = []
+    data.each {|professor| professors_list.push({label: professor["professor_name"], value: professor["professor_email"]})}
+
+    render json: { professors: professors_list }
   end
 
-  def search_image
-    send_file File.join('app/assets/images/img.jpeg'), :disposition => 'inline'
+  private
+
+  def get_student_json_data
+    file = File.read('student_scraped_data.json')
+    JSON.parse(file)
   end
+
+  def get_professor_json_data
+    file = File.read('professor_scraped_data.json')
+    JSON.parse(file)
+  end
+
+
 end
