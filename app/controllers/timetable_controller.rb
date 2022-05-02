@@ -6,12 +6,18 @@ class TimetableController < ApplicationController
       detect{|e| e["academic_year"] == params[:academic_year]}["groups"].
       detect{|e| e["group"] == params[:group]}["subjects"]
 
+    calculate_subject_status(subjects)
+
     render json: subjects
   end
 
   def professor
     data = get_professor_json_data
-    render json: data.detect{|e| e["professor_email"] == params[:email]}["timetable"]
+    subjects = data.detect{|e| e["professor_email"] == params[:email]}["timetable"]
+
+    calculate_subject_status(subjects)
+
+    render json: subjects
   end
 
   def study_fields
@@ -49,6 +55,12 @@ class TimetableController < ApplicationController
   end
 
   private
+
+  def calculate_subject_status(subjects)
+    subjects[0]["timetable"].each do |subject_data|
+      subject_data["status"] = Services::SubjectStatusCalculator.calculate_status_of(subject_data["time"])
+    end
+  end
 
   def get_student_json_data
     file = File.read('student_scraped_data.json')
