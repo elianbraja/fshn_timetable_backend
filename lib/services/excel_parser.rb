@@ -33,7 +33,7 @@ module Services
       {
         subject: split_event_array[1].strip,
         type: split_event_array[2].strip[0],
-        teacher: (split_event_array[3].strip + " / " + split_event_array[4].strip),
+        teacher: (split_event_array[3].strip + " | " + split_event_array[4].strip),
         location: split_event_array[5].strip.slice(/(\(.*?\))/, 1).gsub(Regexp.union(['(', ')', 'Klasa']), '')
       }
     end
