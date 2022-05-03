@@ -57,7 +57,7 @@ class TimetableController < ApplicationController
   private
 
   def calculate_subject_status(subjects)
-    subjects[Date.today.wday - 1].try(:[], "timetable").each do |subject_data|
+    subjects[Time.current.in_time_zone('Rome').wday - 1].try(:[], "timetable").each do |subject_data|
       subject_data["status"] = Services::SubjectStatusCalculator.calculate_status_of(subject_data["time"])
     end
   end
