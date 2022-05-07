@@ -8,7 +8,7 @@ module Services
       html = open(url)
       @doc = Nokogiri::HTML(html, nil, 'UTF-8')
       subject_array = []
-      @doc.css('#ddlDega option').each_with_index do |study_field, index|
+      @doc.css('#ddlDega option').each do |study_field|
         subject_array.push({
                              label: study_field[:value],
                              value: study_field[:value]
