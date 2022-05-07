@@ -4,7 +4,7 @@ module Services
     def self.calculate_status_of(time)
 
       day_index = Time.current.in_time_zone('Rome').wday
-      return nil if day_index.between? 6,7
+      return nil if [0, 6, 7].include? day_index
 
       times = time.split("-").map(&:strip)
 
