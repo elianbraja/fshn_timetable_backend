@@ -2,6 +2,10 @@ module Services
   module SubjectStatusCalculator
 
     def self.calculate_status_of(time)
+
+      day_index = Time.current.in_time_zone('Rome').wday
+      return nil if day_index.between? 6,7
+
       times = time.split("-").map(&:strip)
 
       if parse_time(Time.now).between?(parse_time(times[0]), parse_time(times[1]))
