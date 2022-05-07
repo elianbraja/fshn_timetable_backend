@@ -57,7 +57,10 @@ class TimetableController < ApplicationController
   private
 
   def calculate_subject_status(subjects)
-    subjects[Time.current.in_time_zone('Rome').wday - 1].try(:[], "timetable").each do |subject_data|
+    current_day_index = Time.current.in_time_zone('Rome').wday - 1
+    day_index = current_day_index > 4 ? 0 : current_day_index
+
+    subjects[day_index].try(:[], "timetable").each do |subject_data|
       subject_data["status"] = Services::SubjectStatusCalculator.calculate_status_of(subject_data["time"])
     end
   end
@@ -71,6 +74,4 @@ class TimetableController < ApplicationController
     file = File.read('professor_scraped_data.json')
     JSON.parse(file)
   end
-
-
 end
