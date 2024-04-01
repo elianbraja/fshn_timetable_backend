@@ -9,7 +9,7 @@ module Services
     @engine = :selenium_chrome
     @start_urls = ["http://37.139.119.36:81/orari/student/"]
     @config = {
-      user_agent: "Chrome/68.0.3440.84"
+      user_agent: "Chrome/123.0.6312.87"
     }
 
     def parse(response, url:, data: {})
