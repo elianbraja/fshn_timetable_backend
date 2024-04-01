@@ -1,24 +1,35 @@
-# README
+# Orari FSHN (Backend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+The Orari FSHN (backend) is a Ruby on Rails project tailored for scraping data from FSHN's timetable website. It operates without a database, retrieving all necessary information from a generated JSON file after scraping. The scraping process can be executed regularly to ensure the data remains up-to-date.
 
-* Ruby version
+## Project Details
 
-* System dependencies
+- **FSHN Timetable Website**: [http://37.139.119.36:81/orari/](http://37.139.119.36:81/orari/)
+- **Ruby Version**: 2.6.6
 
-* Configuration
+## Scraping Procedures
 
-* Database creation
+### 1. Scraping Professor Timetable
+```ruby
+Services::ProfessorDataScraper.new.generate_json_data
+```
 
-* Database initialization
+### 1. Scraping Student Timetable
+```ruby
+# Make sure to have chromedriver with the appropriate version installed locally
+# https://chromedriver.chromium.org/downloads
 
-* How to run the test suite
+Services::StudentDataScraper.crawl!
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Deployment (Fly.io)
+- **Deploy**: fly deploy
+- **Staging url**: [https://timetable-fshn.fly.dev](https://timetable-fshn.fly.dev)
 
-* Deployment instructions
 
-* ...
+
+
+
+
