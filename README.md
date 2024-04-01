@@ -16,7 +16,7 @@ The Orari FSHN (backend) is a Ruby on Rails project tailored for scraping data f
 Services::ProfessorDataScraper.new.generate_json_data
 ```
 
-### 1. Scraping Student Timetable
+### 2. Scraping Student Timetable
 ```ruby
 # Make sure to have chromedriver with the appropriate version installed locally
 # https://chromedriver.chromium.org/downloads
